@@ -1,6 +1,6 @@
 var bio = {
-	"name" : "Bryan R. Overseth",
-	"role" : "Sr. Systems Architect",
+	"name" : "Bryan R. Overseth ",
+	"role" : "Sr. Systems Architect ",
 	"contacts" : {
 		"mobile" : "678-386-6979",
 		"email" : "Boverseth@hotmail.com",
@@ -9,14 +9,19 @@ var bio = {
 		"location" : "Bigfork, MT"
 	},
 	"welcomeMessage" : "Welcome to my site.  Please let me know if you have any questions",
-	"skills" : ["Architect", "Design and Engineering", "Consulting", "Technical Training", "Project Management", "Concept Labs", "Technical Writing"],
+	"skills" : ["Architect", "Design and Engineering", "Consulting", "Technical Training", "Project Management", "Concept Labs", "Technical Writing"
+	],
 	"bioPic": "images/Overssth.jpg"
 }
 
-var work = {}
-	work.position =  "Sr. Systems Architect";
-	work.employer =  "AT&T";
-	work.years =  "21";
+var formattedName = HTMLheaderName.replace("%data%", bio.name);
+var formattedRole = HTMLheaderName.replace("%data%", bio.role);
+
+$("#header").prepend(formattedRole);
+$("#header").prepend(formattedName);
+
+// console.log(formattedName);
+// console.log(formattedRole);
 
 var eduction = {
 	"schools": [
@@ -36,8 +41,7 @@ var eduction = {
 			"years": "2+",
 			"major": ["Telecommunications Management", "Computer Science"]
 		}
-	]
-},
+	],
 	"onlineCourses": [
 		{
 			"name": "Udacity",
