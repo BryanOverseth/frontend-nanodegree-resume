@@ -2,11 +2,12 @@ var bio = {
 	"name" : "Bryan R. Overseth ",
 	"role" : "Sr. Systems Architect ",
 	"contacts" : {
-		"mobile" : "678-386-6979",
-		"email" : "Boverseth@hotmail.com",
-		"github" : "https://github.com/BryanOverseth",
-		"twitter" : "NA",
-		"location" : "Bigfork, MT"
+		"Mobile" : "678-386-6979",
+		"Email" : "Boverseth@hotmail.com",
+		"Github" : "https://github.com/BryanOverseth",
+		"Twitter" : "NA",
+		"Blog" : "NA",
+		"Location" : "Bigfork, MT"
 	},
 	"welcomeMessage" : "Welcome to my site.  Please let me know if you have any questions",
 	"skills" : ["Architect", "Design and Engineering", "Consulting", "Technical Training", "Project Management", "Concept Labs", "Technical Writing"
@@ -20,8 +21,19 @@ var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
 $("#header").prepend(formattedRole);
 $("#header").prepend(formattedName);
 
-// console.log(formattedName);
-// console.log(formattedRole);
+var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.Mobile);
+var formattedEmail = HTMLemail.replace("%data%", bio.contacts.Email);
+var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.Twitter);
+var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.Github);
+var formattedBlog = HTMLblog.replace("%data%", bio.contacts.Blog);
+var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.Location);
+
+$("#topContacts").prepend(formattedLocation);
+$("#topContacts").prepend(formattedBlog);
+$("#topContacts").prepend(formattedGithub);
+$("#topContacts").prepend(formattedTwitter);
+$("#topContacts").prepend(formattedEmail);
+$("#topContacts").prepend(formattedMobile);
 
 var eduction = {
 	"schools": [
