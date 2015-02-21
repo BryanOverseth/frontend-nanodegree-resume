@@ -12,7 +12,7 @@ var bio = {
 	"welcomeMessage" : "Welcome to my site.  Please let me know if you have any questions",
 	"skills" : ["Architect", "Design and Engineering", "Consulting", "Technical Training", "Project Management", "Concept Labs", "Technical Writing"
 	],
-	"bioPic": "images/Overssth.jpg"
+	"bioPic": "images/skynet.jpg"
 }
 
 var formattedName = HTMLheaderName.replace("%data%", bio.name);
@@ -34,6 +34,29 @@ $("#topContacts").prepend(formattedGithub);
 $("#topContacts").prepend(formattedTwitter);
 $("#topContacts").prepend(formattedEmail);
 $("#topContacts").prepend(formattedMobile);
+
+var formattedPic = HTMLbioPic.replace("%data%", bio.bioPic);
+$("#header").prepend(formattedPic);
+
+if (bio.skills.length > 0) {
+
+	$("#header").append(HTMLskillsStart);
+
+	var formattedSkill = HTMLskills.replace("%data%", bio.skills[0]);
+	$("#skillsH3").append(formattedSkill);
+	formattedSkill = HTMLskills.replace("%data%", bio.skills[1]);
+	$("#skillsH3").append(formattedSkill);
+	formattedSkill = HTMLskills.replace("%data%", bio.skills[2]);
+	$("#skillsH3").append(formattedSkill);
+	formattedSkill = HTMLskills.replace("%data%", bio.skills[3]);
+	$("#skillsH3").append(formattedSkill);
+	formattedSkill = HTMLskills.replace("%data%", bio.skills[4]);
+	$("#skillsH3").append(formattedSkill);
+	formattedSkill = HTMLskills.replace("%data%", bio.skills[5]);
+	$("#skillsH3").append(formattedSkill);
+	formattedSkill = HTMLskills.replace("%data%", bio.skills[6]);
+	$("#skillsH3").append(formattedSkill);
+}
 
 var eduction = {
 	"schools": [
