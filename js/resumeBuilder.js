@@ -21,6 +21,18 @@ var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
 $("#header").prepend(formattedRole);
 $("#header").prepend(formattedName);
 
+function inName(name) {
+	name = bio.name.trim().split(" ");
+	console.log(name);
+	name[2] = name[2].toUpperCase();
+	name[0] = name[0].slice(0,1).toUpperCase() +
+		name[0].slice(1).toLowerCase();
+
+	return name[0] +" "+ name[1] +" "+ name[2];
+}
+
+$('#main').append(internationalizeButton);
+
 var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.Mobile);
 var formattedEmail = HTMLemail.replace("%data%", bio.contacts.Email);
 var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.Twitter);
@@ -94,21 +106,21 @@ var work = {
 		{
 			"employer": "AT&T",
 			"title": "Senior Technical Architect",
-			"location":  "Atlanta, GA",
+			"location":  "Bigfork,MT",
 			"dates": "2007-Present",
 			"description": "Enterprise Technology Services"
 		},
 		{
 			"employer": "Cingular Wireless",
 			"title": "Architect and Engineering",
-			"location":  "Atlanta, GA",
+			"location":  "Alpharetta, GA",
 			"dates": "2001-2007",
 			"description": "Infrastructure Architecture and Mobility Services"
 		},
 		{
 			"employer": "Cypress Communications",
 			"title": "Principal IT Engineer",
-			"location":  "Atlanta, GA",
+			"location":  "Buckhead, GA",
 			"dates": "2000-2001",
 			"description": "Information Technology Services"
 		},
@@ -127,7 +139,7 @@ var work = {
 			"description": "Regional Datacenter Services"
 		}
 	]
-}
+};
 
 function displaywork() {
 	for (job in work.jobs) {
@@ -144,9 +156,21 @@ function displaywork() {
 		var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
 		$(".work-entry:last").append(formattedDescription);
 	}
-}
+};
 
 displaywork();
+
+function locationizer(work_obj) {
+	var locationArray = [];
+
+	for (job in work_obj.jobs) {
+		var newLocation = work_obj.jobs[job].location;
+		locationArray.push(newLocation);
+	}
+
+	return locationArray;
+}
+
 
 $(document).click(function(loc) {
 	var x = loc.pageX;
