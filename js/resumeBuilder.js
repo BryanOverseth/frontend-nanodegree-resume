@@ -2,12 +2,12 @@ var bio = {
 	"name" : "Bryan R. Overseth ",
 	"role" : "Sr. Systems Architect ",
 	"contacts" : {
-		"Mobile" : "678-386-6979",
-		"Email" : "Boverseth@hotmail.com",
-		"Github" : "https://github.com/BryanOverseth",
-		"Twitter" : "NA",
-		"Blog" : "NA",
-		"Location" : "Bigfork, MT"
+		"mobile" : "678-386-6979",
+		"email" : "Boverseth@hotmail.com",
+		"github" : "https://github.com/BryanOverseth",
+		"twitter" : "NA",
+		"blog" : "NA",
+		"location" : "Bigfork, MT"
 	},
 	"welcomeMessage" : "Welcome to my site.  Please let me know if you have any questions",
 	"skills" : ["Architect", "Design and Engineering", "Consulting", "Technical Training", "Project Management", "Concept Labs", "Technical Writing"
@@ -75,7 +75,7 @@ var eduction = {
 		{
 			"name": "Dekalb",
 			"url": "http://www.gpc.edu/",
-			"city":  "Atlanta Area",
+			"location":  "Dekalb, GA",
 			"degree": "NA",
 			"years": "1+",
 			"minor": ["Business Administration"]
@@ -83,7 +83,7 @@ var eduction = {
 		{
 			"name": "Devry",
 			"url": "http://www.devry.edu/",
-			"city":  "Atlanta Area",
+			"location":  "Alpharetta, GA",
 			"degree": "NA",
 			"years": "2+",
 			"major": ["Telecommunications Management", "Computer Science"]
@@ -93,7 +93,7 @@ var eduction = {
 		{
 			"name": "Udacity",
 			"url": "http://www.udacity.com/",
-			"city":  "Online",
+			"location":  "Mountain View, CA",
 			"degree": "NanoDegree",
 			"years": "8 months",
 			"major": ["Front-End Web Developer"]
@@ -106,7 +106,7 @@ var work = {
 		{
 			"employer": "AT&T",
 			"title": "Senior Technical Architect",
-			"location":  "Bigfork,MT",
+			"location":  "Bigfork, MT",
 			"dates": "2007-Present",
 			"description": "Enterprise Technology Services"
 		},
@@ -179,3 +179,4 @@ $(document).click(function(loc) {
 	logClicks(x,y);
 });
 
+$("#mapDiv").append(googleMap);
