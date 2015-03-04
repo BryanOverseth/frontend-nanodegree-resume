@@ -33,12 +33,12 @@ function inName(name) {
 
 $('#main').append(internationalizeButton);
 
-var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.Mobile);
-var formattedEmail = HTMLemail.replace("%data%", bio.contacts.Email);
-var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.Twitter);
-var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.Github);
-var formattedBlog = HTMLblog.replace("%data%", bio.contacts.Blog);
-var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.Location);
+var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
+var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
+var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
+var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
+var formattedBlog = HTMLblog.replace("%data%", bio.contacts.blog);
+var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
 
 $("#topContacts").prepend(formattedLocation);
 $("#topContacts").prepend(formattedBlog);
@@ -171,6 +171,45 @@ function locationizer(work_obj) {
 	return locationArray;
 }
 
+var projects = {
+	"projects": [
+		{
+			"title": "Udacity - P1 - HTML and CSS",
+			"dates": "January - February 2015",
+			"description":  "Create a mock website using HTML and CSS",
+			"githuburl": "https://github.com/BryanOverseth"
+		},
+		{
+			"title": "Udacity - P2 - Javascript and Jquery",
+			"dates": "January - February 2015",
+			"description":  "Create your own resume using Javascript and Jquery",
+			"githuburl": "https://github.com/BryanOverseth"
+		}
+	]
+};
+
+projects.display = function() {
+	for (project in projects.projects) {
+		$("#projects").append(HTMLprojectStart);
+
+		var formattedTitle = HTMLprojectTitle.replace("%data%", projects.projects[project].title);
+		$(".project-entry:last").append(formattedTitle);
+
+		var formattedDates = HTMLprojectDates.replace("%data%", projects.projects[project].dates);
+		$(".project-entry:last").append(formattedDates);
+
+		var formattedDescription = HTMLprojectDescription.replace("%data%", projects.projects[project].description);
+		$(".project-entry:last").append(formattedDescription);
+
+
+				var formattedGithubURL = HTMLprojectLocation.replace("%data%", projects.projects[project].githuburl);
+				$(".project-entry:last").append(formattedGithubURL);
+
+
+	}
+};
+
+projects.display();
 
 $(document).click(function(loc) {
 	var x = loc.pageX;
