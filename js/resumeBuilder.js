@@ -91,21 +91,62 @@ var work = {
 		}
 	],
 	"displaywork" : function () {
-			for (job in work.jobs) {
-				$("#workExperience").append(HTMLworkStart);
-				var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
-				var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
-				var formattedEmployerTitle = formattedEmployer.concat(formattedTitle);
-				$(".work-entry:last").append(formattedEmployerTitle);
-				var formattedDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
-				$(".work-entry:last").append(formattedDates);
-				var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
-				$(".work-entry:last").append(formattedDescription);
+		for (job in work.jobs) {
+			$("#workExperience").append(HTMLworkStart);
+			var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
+			var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
+			var formattedEmployerTitle = formattedEmployer.concat(formattedTitle);
+			$(".work-entry:last").append(formattedEmployerTitle);
+			var formattedDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
+			$(".work-entry:last").append(formattedDates);
+			var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
+			$(".work-entry:last").append(formattedDescription);
 		}
 	}
 };
 // work function - builds work related information
 work.displaywork();
+
+var education = {
+	"schools": [
+		{
+			"name": "Dekalb",
+			"url": "http://www.gpc.edu/",
+			"location":  "Dekalb, GA",
+			"degree": "NA",
+			"years": "1+",
+			"minor": ["Business Administration"]
+		},
+		{
+			"name": "Devry",
+			"url": "http://www.devry.edu/",
+			"location":  "Alpharetta, GA",
+			"degree": "NA",
+			"years": "2+",
+			"major": ["Telecommunications Management", "Computer Science"]
+		}
+	],
+	"onlineCourses": [
+		{
+			"name": "Udacity",
+			"url": "http://www.udacity.com/",
+			"location":  "Mountain View, CA",
+			"degree": "NanoDegree",
+			"years": "8 months",
+			"major": ["Front-End Web Developer"]
+		}
+	],
+	"displayeducationschools" : function () {
+		for (school in education.schools) {
+			$("#education").append(HTMLschoolStart);
+			var formattedschoolName = HTMLschoolName.replace("%data%", education.schools[school].name);
+			$(".education-entry:last").append(formattedschoolName);
+		}
+	}
+};
+
+// education function - builds education related information
+education.displayeducationschools();
 
 
 // function that changes the case of bio.name
@@ -122,7 +163,7 @@ function inName(name) {
 // Internationlize bio.name
 $('#main').append(internationalizeButton);
 
-// Console x abd y coordinates of a mouse click on the web page
+// Console x and y coordinates of a mouse click on the web page
 $(document).click(function(loc) {
 	var x = loc.pageX;
 	var y = loc.pageY;
