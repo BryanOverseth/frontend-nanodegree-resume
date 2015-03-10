@@ -107,47 +107,99 @@ var work = {
 // work function - builds work related information
 work.displaywork();
 
+var projects = {
+	"projects": [
+		{
+			"title": "Udacity - P1 - HTML and CSS",
+			"dates": "January - February 2015",
+			"description":  "Create a mock website using HTML and CSS",
+			"images": "images/robot.jpg",
+		},
+		{
+			"title": "Udacity - P2 - Javascript and Jquery",
+			"dates": "January - February 2015",
+			"description":  "Create your own resume using Javascript and Jquery",
+			"images": "images/tank.jpg"
+		}
+	],
+	"displayworkprojects" : function () {
+		for (project in projects.projects) {
+		$("#projects").append(HTMLprojectStart);
+		var formattedTitle = HTMLprojectTitle.replace("%data%", projects.projects[project].title);
+		$(".project-entry:last").append(formattedTitle);
+		var formattedDates = HTMLprojectDates.replace("%data%", projects.projects[project].dates);
+		$(".project-entry:last").append(formattedDates);
+		var formattedDescription = HTMLprojectDescription.replace("%data%", projects.projects[project].description);
+		$(".project-entry:last").append(formattedDescription);
+   		var formattedImage = HTMLprojectImage.replace("%data%", projects.projects[project].images);
+      	$(".project-entry:last").append(formattedImage);
+		}
+	}
+};
+// project function - builds project related information
+projects.displayworkprojects();
+
 var education = {
 	"schools": [
 		{
 			"name": "Dekalb",
-			"url": "http://www.gpc.edu/",
 			"location":  "Dekalb, GA",
 			"degree": "NA",
-			"years": "1+",
-			"minor": ["Business Administration"]
+			"majors": ["Business Administration"],
+			"dates": "1+ years",
+			"url": "http://www.gpc.edu/",
 		},
 		{
 			"name": "Devry",
-			"url": "http://www.devry.edu/",
 			"location":  "Alpharetta, GA",
 			"degree": "NA",
-			"years": "2+",
-			"major": ["Telecommunications Management", "Computer Science"]
+			"majors": ["Telecommunications Management", "Computer Science"],
+			"dates": "2+ years",
+			"url": "http://www.devry.edu/",
 		}
 	],
 	"onlineCourses": [
 		{
-			"name": "Udacity",
+			"school": "Udacity",
 			"url": "http://www.udacity.com/",
 			"location":  "Mountain View, CA",
 			"degree": "NanoDegree",
-			"years": "8 months",
-			"major": ["Front-End Web Developer"]
+			"dates": "2014-2015",
+			"title": ["Front-End Web Developer"]
 		}
 	],
 	"displayeducationschools" : function () {
 		for (school in education.schools) {
 			$("#education").append(HTMLschoolStart);
 			var formattedschoolName = HTMLschoolName.replace("%data%", education.schools[school].name);
-			$(".education-entry:last").append(formattedschoolName);
+			var formattedschoolDegree = HTMLschoolDegree.replace("%data%", education.schools[school].degree);
+			var formattedschoolNameDegree = formattedschoolName.concat(formattedschoolDegree);
+			$(".education-entry:last").append(formattedschoolNameDegree);
+			var formattedschoolDates = HTMLschoolDates.replace("%data%", education.schools[school].dates);
+			$(".education-entry:last").append(formattedschoolDates);
+			var formattedschoolLocation = HTMLschoolLocation.replace("%data%", education.schools[school].location);
+			$(".education-entry:last").append(formattedschoolLocation);
+		}
+	},
+	"displayeducationonline" : function () {
+		for (online in education.onlineCourses) {
+			$("#education").append(HTMLschoolStart);
+			var formattedOnlineTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses[online].title);
+			var formattedOnlineSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[online].school);
+			var formattedschoolTitleSchool = formattedOnlineSchool.concat(formattedOnlineTitle);
+			$(".education-entry:last").append(formattedschoolTitleSchool);
+			var formattedOnlineDates = HTMLonlineDates.replace("%data%", education.onlineCourses[online].dates);
+			$(".education-entry:last").append(formattedOnlineDates);
+			var formattedOnlineUrl = HTMLonlineURL.replace("%data%", education.onlineCourses[online].url);
+			$(".education-entry:last").append(formattedOnlineUrl);
 		}
 	}
 };
 
+
 // education function - builds education related information
 education.displayeducationschools();
-
+education.displayeducationonline();
 
 // function that changes the case of bio.name
 function inName(name) {
