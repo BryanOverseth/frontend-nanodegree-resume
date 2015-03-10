@@ -25,7 +25,7 @@ h1 {
 }
 
 h2 {
-  font-weight: bold;
+  font-weight: normal;
   font-size: 24px;
   color: #999999;
   line-height: 29px;
@@ -89,7 +89,7 @@ a {
 .welcome-message {
   font-style: italic;
   font-size: 16px;
-  color: #F3F3F3;
+  color: #999;
   line-height: 28px;
   padding:10px;
   float:right;
@@ -99,6 +99,8 @@ a {
   color: #99999;
   display: none;
   padding: 5px 0px 10px 220px;
+  border: 2px solid white;
+  background-color: #F3F3F3;
 }
 
 .orange {
@@ -107,6 +109,10 @@ a {
 
 .orange-text {
   color: #F5AE23;
+}
+
+.light-blue-text {
+  color:#1199C3;
 }
 
 .white-text {
@@ -151,9 +157,9 @@ ul {
 
 .biopic {
   float: left;
-  padding: 10px 10px 10px 0px;
-  width: 200px;
-  height: 200px;
+  padding: 2px 10px 10px 2px;
+  width: 220px;
+  height: 246px;
   display: none;
 }
 
