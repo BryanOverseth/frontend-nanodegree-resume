@@ -10,7 +10,7 @@ var bio = {
 	},
 	"welcomeMessage" : "Welcome to my site.  Please let me know if you have any questions",
 	"skills" : ["Architect", "Design and Engineering", "Consulting", "Technical Training", "Project Management", "Concept Labs", "Technical Writing"],
-	"bioPic": "images/skynet.jpg",
+	"bioPic": "images/skynet01.jpg",
 	"biography" : function () {
 		var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
 		$("#header").prepend(formattedRole);
@@ -31,8 +31,10 @@ var bio = {
 		var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
 		$("#topContacts").append(formattedMobile);
 		$("#footerContacts").append(formattedMobile);
-		var formattedPic = HTMLbioPic.replace("%data%", bio.bioPic);
-		$("#header").append(formattedPic);
+		var formattedPic1 = HTMLbioPic1.replace("%data%", bio.bioPic);
+		$("#header").append(formattedPic1);
+		var formattedPic2 = HTMLbioPic2.replace("%data%", bio.bioPic);
+		$("#header").append(formattedPic2);
 		var formattedwelcomeMsg = HTMLWelcomeMsg.replace("%data%", bio.welcomeMessage);
 		$("#header").append(formattedwelcomeMsg);
 			if (bio.skills.length > 0) {
@@ -118,13 +120,13 @@ var projects = {
 			"title": "Udacity - P1 - HTML and CSS",
 			"dates": "January - February 2015",
 			"description":  "Create a mock website using HTML and CSS",
-			"images": "images/robot.jpg",
+			"images": ["images/robot.jpg"],
 		},
 		{
 			"title": "Udacity - P2 - Javascript and Jquery",
 			"dates": "January - February 2015",
 			"description":  "Create your own resume using Javascript and Jquery",
-			"images": "images/tank.jpg"
+			"images": ["images/tank.jpg"]
 		}
 	],
 	"displayworkprojects" : function () {
