@@ -1,3 +1,22 @@
+var nav = {
+	"home" : "Home ",
+	"workexperience" : "Work Experience ",
+	"projects" : "Projects ",
+	"education" : "Education ",
+	"navbar" : function () {
+		var formattedNavEducation = HTMLnavEducation.replace("%data%", nav.education);
+		$("#navtabs").prepend(formattedNavEducation);
+		var formattedNavProject = HTMLnavProject.replace("%data%", nav.projects);
+		$("#navtabs").prepend(formattedNavProject);
+		var formattedNavWork = HTMLnavWork.replace("%data%", nav.workexperience);
+		$("#navtabs").prepend(formattedNavWork);
+		var formattedNavHome = HTMLnavHome.replace("%data%", nav.home);
+		$("#navtabs").prepend(formattedNavHome);
+	}
+};
+// nav function - builds navigation bar
+nav.navbar();
+
 var bio = {
 	"name" : "Bryan R. Overseth ",
 	"role" : "Sr. Systems Architect ",
@@ -33,8 +52,8 @@ var bio = {
 		$("#footerContacts").append(formattedMobile);
 		var formattedPic1 = HTMLbioPic1.replace("%data%", bio.bioPic);
 		$("#header").append(formattedPic1);
-		var formattedPic2 = HTMLbioPic2.replace("%data%", bio.bioPic);
-		$("#header").append(formattedPic2);
+		//var formattedPic2 = HTMLbioPic2.replace("%data%", bio.bioPic);
+		//$("#header").append(formattedPic2);
 		var formattedwelcomeMsg = HTMLWelcomeMsg.replace("%data%", bio.welcomeMessage);
 		$("#header").append(formattedwelcomeMsg);
 			if (bio.skills.length > 0) {

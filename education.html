@@ -53,16 +53,14 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
 </head>
 <body unresolved>
 <!-- Navbar -->
-   <div id="nav" role="tabpanel">
-      <ul id="navtabs" class="nav nav-tabs" role="tablist"></ul>
-        <div class="tab-content">
-          <div role="tabpanel" class="tab-pane active" id="navhome">...</div>
-          <div role="tabpanel" class="tab-pane" id="navwork">...</div>
-          <div role="tabpanel" class="tab-pane" id="navprojects">...</div>
-          <div role="tabpanel" class="tab-pane" id="naveducation">...</div>
-        </div>
-    </div>
-
+  <div id="nav" role="tabpanel">
+    <ul id="navtabs" class="nav nav-tabs" role="tablist"></ul>
+      <div class="tab-content">
+        <div role="tabpanel" class="tab-pane active" id="navhome">...</div>
+        <div role="tabpanel" class="tab-pane" id="navwork">...</div>
+        <div role="tabpanel" class="tab-pane" id="navprojects">...</div>
+        <div role="tabpanel" class="tab-pane" id="naveducation">...</div>
+      </div>
   <div id="main">
       <!-- You'll be deleting this line in the course -->
 
@@ -76,7 +74,9 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
       <ul id="topContacts" class='flex-box'></ul>
       <hr/>
     </div>
-    <div style='clear: both;'></div>
+    <div id="education" class='gray'>
+      <h2>Education</h2>
+    </div>
     <div id="mapDiv">
       <h2>Where I've Lived and Worked</h2>
     </div>
@@ -132,9 +132,9 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
     //if(document.getElementsByClassName('project-entry').length === 0) {
     //  document.getElementById('projects').style.backgroundColor = 'none';
     //}
-    //if(document.getElementsByClassName('education-entry').length === 0) {
-    //  document.getElementById('education').style.display = 'none';
-    //}
+    if(document.getElementsByClassName('education-entry').length === 0) {
+      document.getElementById('education').style.display = 'none';
+    }
     if(document.getElementsByClassName('flex-item').length === 0) {
       document.getElementById('letsConnect').style.display = 'none';
     }

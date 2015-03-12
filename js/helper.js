@@ -12,6 +12,12 @@ Cameron Pittman
 These are HTML strings. As part of the course, you'll be using JavaScript functions
 replace the %data% placeholder text you see in them.
 */
+
+var HTMLnavHome = '<li role="presentation" class="active"><a href="index.html" aria-controls="navhome" role="tab" data-toggle="tab">%data%</a></li>';
+var HTMLnavWork = '<li role="presentation"><a href="work.html" aria-controls="navwork" role="tab" data-toggle="tab">%data%</a></li>';
+var HTMLnavProject = '<li role="presentation"><a href="projects.html" aria-controls="navproject" role="tab" data-toggle="tab">%data%</a></li>';
+var HTMLnavEducation = '<li role="presentation"><a href="education.html" aria-controls="naveducation" role="tab" data-toggle="tab">%data%</a></li>';
+
 var HTMLheaderName = '<h1 id="name">%data%</h1>';
 var HTMLheaderRole = '<span class="bold">%data%</span><hr/>';
 
@@ -23,12 +29,12 @@ var HTMLgithub = '<li class="flex-item"><span class="orange-text">github</span><
 var HTMLblog = '<li class="flex-item"><span class="orange-text">blog</span><span class="white-text">%data%</span></li>';
 var HTMLlocation = '<li class="flex-item"><span class="orange-text">location</span><span class="white-text">%data%</span></li>';
 
-var HTMLbioPic1 = '<br><img src="%data%" class="biopic1">';
+var HTMLbioPic1 = '<img src="%data%" class="biopic1">';
 var HTMLbioPic2 = '<br><img src="%data%" class="biopic2">';
-var HTMLWelcomeMsg = '<span class="welcome-message">%data%</span>';
+var HTMLWelcomeMsg = '<span class="welcome-message">%data%</span><br>';
 
 var HTMLskillsStart = '<h2 id="skillsH3">Skills at a Glance:</h2><ul id="skills" class="flex-box"></ul>';
-var HTMLskills = '<li class="flex-item"><span class="light-blue-text">%data%</span></li>';
+var HTMLskills = '<li class="li-skills" class="flex-item"><span class="light-blue-text">%data%</span></li>';
 
 var HTMLworkStart = '<div class="work-entry"></div>';
 var HTMLworkEmployer = '<a href="#">%data%';
